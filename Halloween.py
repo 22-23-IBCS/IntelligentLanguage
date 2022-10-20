@@ -71,8 +71,7 @@ def main():
     print("bottom are the generosity of houses and its coordinates")
     
     #first starting houses
-    lo = [housemap[start1][start2].getV(),start1,start2]
-    print(lo)
+    
 
     #calculate total average
     total1 = 0
@@ -84,10 +83,11 @@ def main():
     for i in range(numHouse):
         n = housemap[start1][start2].getV()
         total = total + n    #calculate average of houses visited
-        
+        lo = [housemap[start1][start2].getV(),start1,start2]
+        print(lo)
+
         lo = housemap[start1][start2].adjacent(start1,start2,housemap) #find next house to visit
         housemap[start1][start2].setV() #set the house that has already been visited to -10000
-        print(lo) #houses visited lists
         start1 = lo[1] #reset the position of user and ready to find next adjacent
         start2 = lo[2]    
     ave = total/numHouse
