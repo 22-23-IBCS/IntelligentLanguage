@@ -1,4 +1,5 @@
 import random
+import time
 def main():
 
 
@@ -14,8 +15,7 @@ def main():
                 L[j+1] = temp
             print(L)
     '''
-
-    G = L
+    start = time.time()
     maxPos = len(L)-2
     
     while True:
@@ -28,10 +28,13 @@ def main():
         
         isSorted = True
         for i in range(len(L)-1):
-            if G[i]>G[i+1]:
+            if L[i]>L[i+1]:
                 isSorted = False
         if isSorted:
             break
+    stop = time.time()
+    total = stop - start
+    print(total)
             
 
 
